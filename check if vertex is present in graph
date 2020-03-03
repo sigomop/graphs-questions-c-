@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+class graph{int v;map <int ,list<int >>m;
+	//
+	public:
+	 graph(int V){V=v;}
+	void add(int u,int v){m[u].push_back(v);}
+	bool *vv=new bool[v]{0};
+	bool dfs(int x,int y){
+		
+	vv[x]=true;
+	for(int mm:m[x]){if(mm==y){return true;
+		}
+		if(!vv[mm]){
+		
+			dfs(mm,y);}
+		
+	}return false;}
+	
+};
+
+int main() {
+	graph g(4);
+	g.add(2,3);
+	g.add(3,2);g.add(5,2);g.add(4,2);g.add(3,4);
+	if(g.dfs(5,2))cout<<"ff";else{cout<<"k";}
+	
+	return 0;
+}
